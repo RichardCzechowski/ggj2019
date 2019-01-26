@@ -6,24 +6,71 @@ export default class MainMenu {
   }
 
   setupListeners () {
+    if (this.gameState.difficulty === 3) {
+      this.quitJump()
+    }
+
     $("#quit").on("click", ()=>{
-      switch (gameState.difficulty) {
+      console.log(this.gameState.difficulty)
+      switch (this.gameState.difficulty) {
         case 1:
-        break;
+          break;
 
         case 2:
-        break;
+          this.quitAlert()
+          break;
 
         case 3:
-        break;
+          // this also gets quitJump
+          this.quitAlert()
+          break;
 
         default:
-        console.log('difficulty not set')
-        break;
+          console.log('difficulty not set')
+          break;
       }
-
-
     })
+  }
+
+  quitAlert (){
+    let quitMsgs = [
+      "Are you sure you want to leave?",
+      "Are you absolutely sure?",
+      "Click Cancel to quit your quitting",
+      "You haven't really started playing...",
+      "But you just got here.",
+      "I'm lonely. Play with me.",
+      "Click Cancel to quit your quitting",
+      "Click Ok to Stay"
+    ]
+    this.recursiveConfirm(quitMsgs)
+  }
+
+  quitJump () {
+    $("#quit").on("mouseenter", (event)=>{
+
+      // Reset to origin
+      event.target.style.left  = '0px'
+      event.target.style.top  = '0px'
+      event.target.style.position = 'relative'
+
+      // Randomize position
+      let randomHorz = 100 * Math.random() + 15
+      let randomVert = 100 * Math.random() + 15
+      randomHorz = Math.random() >= .5 ? randomHorz : randomHorz * -1
+      randomVert = Math.random() >= .5 ? randomVert : randomVert * -1
+      event.target.style.left  = `${parseInt(event.target.style.left) + randomHorz}px`
+      event.target.style.top  = `${parseInt(event.target.style.left) + randomVert}px`
+    })
+  }
+
+  recursiveConfirm (messageArr) {
+    let msg = messageArr.splice(Math.floor(Math.random()*messageArr.length), 1)[0]
+    if (msg && confirm(msg)) {
+      // remove a point each time.
+      this.gameState.points = this.gameState.points ? this.gameState.points -= 1 : this.gameState.points
+      this.recursiveConfirm(messageArr)
+    }
   }
 
 }

@@ -10,8 +10,19 @@ window.addEventListener('load', () => {
     saveDisabled: "disabled",
     loadDisabled: "disabled",
     advancedLinkIsDisabled: "disabled",
-    advancedLink: "/001100100-01101111-01101111-01101101"
+    advancedLink: "/001100100-01101111-01101111-01101101",
+    points: 0
   }
+
+  // Gamestate update once a second
+  let previousPoints = 0
+  window.setInterval(()=>{
+    // Watch points
+    if (gameState.points && gameState.points !== previousPoints) {
+      $('#points-container').html(`${gameState.points} credits`)
+    }
+
+  }, 1000)
 
   // Instantiate api handler
   const api = axios.create({
