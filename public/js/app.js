@@ -1,5 +1,6 @@
 import MainMenu from './main_menu.js'
 import NewGame from './new_game.js'
+import Controller from './settings/controller.js'
 
 window.addEventListener('load', () => {
   const el = $('#app');
@@ -104,7 +105,9 @@ window.addEventListener('load', () => {
   });
 
   router.add('/settings-controller', async () => {
-    load('/html/settings/controller.html')
+    load('/html/settings/controller.html').then(()=>{
+      new Controller(gameState, router)
+    })
   });
   router.add('/settings-graphics', async () => {
     load('/html/settings/graphics.html')
