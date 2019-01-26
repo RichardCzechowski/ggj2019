@@ -139,7 +139,7 @@ window.addEventListener('load', () => {
     load('/html/settings/statistics.html')
   });
   router.add('/settings-advanced', async () => {
-    load('/html/settings/advanced-trick.html')
+    load('/html/settings/advanced.html')
   });
   router.add('/settings-001100100-01101111-01101111-01101101', async () => {
     load('/html/settings/advanced.html')
