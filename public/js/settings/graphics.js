@@ -7,6 +7,10 @@ export default class Graphics {
   }
 
   setupListeners () {
+    $('#shadow').on('input', (event)=>{
+      console.log(event.target, event.target.value)
+      $('#dropshadow').html(`menu, menuitem{box-shadow: ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px teal;}`)
+    })
 
     $('#motion-blur').on('click', (event) =>{
       if(event.target.checked){
