@@ -20,7 +20,6 @@ body {
   width: 100%;
  }
 
-
  .vertical-menu {
   padding-inline-start: 0px;
  }
@@ -89,7 +88,7 @@ p {
   background-size: contain;
 }
 
-div > *, menuitem > * {
+menuitem > .option {
   color:white;
   text-decoration: none;
   font-size: 4vmin;
