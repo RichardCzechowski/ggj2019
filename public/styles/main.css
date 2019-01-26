@@ -11,10 +11,13 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
  }
 
 .vertical-menu {
   height: 100%;
+  width: 100%;
+  min-height: 300px;
   padding-inline-start: 0px;
 }
 
@@ -23,10 +26,7 @@ body {
   display: block;
   padding: 12px 0px 12px 24px;
   text-decoration: none;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  width: 100%;
+  flex: 1 1 100%;
   height: 100%;
   margin: 8px 24px;
 }
@@ -72,7 +72,7 @@ h1 {
   background-size: contain;
 }
 
-span {
+menuitem > * {
   color:white;
   text-decoration: none;
   font-size: 4vmin;
