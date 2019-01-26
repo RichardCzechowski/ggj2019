@@ -7,20 +7,30 @@ body {
   font-family: 'Orbitron', sans-serif;
  }
 
+ #app {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+ }
+
 .vertical-menu {
   width: 100%;
   height: 100%;
+  padding-inline-start: 0px;
 }
 
 .vertical-menu menuitem {
-  color: white; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px 24px; /* Add some padding */
-  margin-bottom: 24px;
-  text-decoration: none; /* Remove underline from links */
+  color: white; 
+  display: block; 
+  padding: 12px 12px;
+  text-decoration: none;
   background-image: url("/img/background/button-background.png");
   background-repeat: no-repeat;
   background-size: contain;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 24px 32px;
 }
 
 .vertical-menu menuitem:hover:not(.disabled) {
@@ -53,21 +63,23 @@ h1 {
 }
 
 .uiContainer {
-  width: 400px;
-  height: 600px;
+  width: 100%;
+  height: 100%%;
   display: inline-block;
   position: absolute;
   top: 10%;
   left: 30%;
   background-image: url("/img/background/menu-container.png");
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 a {
   color:white;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 3.2vmin;
 }
+
 a:visited {
   color:white;}
   
