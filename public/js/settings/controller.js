@@ -11,6 +11,8 @@ export default class Controller {
 
   setupListeners () {
     $('#vibration').on('click', (event) =>{
+      var audio = document.getElementById("audio");
+      audio.play();
       if(event.target.checked){
         $('#app').addClass('vibrate')
         // Give them some points!
@@ -24,3 +26,4 @@ export default class Controller {
     })
   }
 }
+
