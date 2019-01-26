@@ -1,16 +1,5 @@
-<div class="option">
-    <label for="theme">Theme</label>
-    <select name="theme" id="theme">
-      <option>Space</option>
-      <option>Dark</option>
-    </select>
-</div>
-<div class="option">
-    <label for="quality">Graphics Quality</label>
-    <input type="range" name="quality" />
-</div>
 
-Graphics Quality
+<!-- Graphics Quality
 Make everything look pixely?
 Resolution
 Change max width and height
@@ -18,7 +7,24 @@ Shadow Quality
 Add drop shadows
 Motion blur
 https://codepen.io/igcorreia/pen/pJvOpL
-
+ -->
 <menu class="vertical-menu">
+  <div class="option">
+      <label for="quality">Graphics Quality</label>
+      <input type="range" name="quality" />
+  </div>
+  <menuitem class="option">
+      <label for="theme">Theme</label>
+      <select name="theme" id="theme">
+        <option>Space</option>
+        <option>Dark</option>
+      </select>
+  </menuitem>
+  <menuitem>
+    <input id="motion-blur" type="checkbox" name="motion-blur">
+    <label for="motion-blur">
+      Motion Blur
+    </label>
+  </menuitem>
   <menuitem><a href="/">Back</a></menuitem>
 </menu>
