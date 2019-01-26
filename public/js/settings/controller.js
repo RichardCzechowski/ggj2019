@@ -4,13 +4,13 @@ export default class Controller {
     this.router = router
     this.setupListeners()
     if($('#app').hasClass('vibrate')){
-      $('#vibration').prop('checked',true)
+      $('#d').prop('checked',true)
     }
     this.gottenPoints = false
   }
 
   setupListeners () {
-    $('#vibration').on('click', (event) =>{
+    $('#d').on('click', (event) =>{
       var audio = document.getElementById("audio");
       audio.play();
       if(event.target.checked){
