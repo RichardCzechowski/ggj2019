@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body {
+  background-image: url("/img/background/space-background.png");
+  width: 100%;
+  height: auto;
+  font-family: 'Orbitron', sans-serif;
+ }
+
 .vertical-menu {
   width: 200px; /* Set a width if you like */
 }
@@ -25,4 +34,15 @@
   opacity: 0.5;
   text-decoration: none;
   pointer-events: none;
+}
+
+.pageTitle {
+  padding: 25px;
+  width: 20%;
+  line-height: 4em;
+}
+
+h1 {
+  color: white;
+  font-size: 52px;
 }
