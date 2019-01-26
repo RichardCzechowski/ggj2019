@@ -16,7 +16,7 @@ export default class NewGame {
     $('.easy').on('click', ()=>{
       if (warn()) { return }
         this.gameState.difficulty = 1
-        this.gameState.points = 1
+        this.gameState.points = 10
         this.router.navigateTo('');
     })
     $('.medium').on('click', ()=>{
@@ -28,7 +28,7 @@ export default class NewGame {
     $('.hard').on('click', ()=>{
       if (warn()) { return }
       this.gameState.difficulty = 3
-      this.gameState.points = 10
+      this.gameState.points = 1
       this.router.navigateTo('');
     })
   }
