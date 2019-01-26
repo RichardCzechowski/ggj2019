@@ -1,3 +1,6 @@
+import MainMenu from './main_menu.js'
+import NewGame from './new_game.js'
+
 window.addEventListener('load', () => {
   const el = $('#app');
 
@@ -28,8 +31,8 @@ window.addEventListener('load', () => {
     el.html(html);
   };
 
-  const load = (file) =>{
-    $.get(file, function (data) {
+  const load = async (file) =>{
+    return $.get(file, function (data) {
       var html=Handlebars.compile(data);
       el.html(html(gameState));
 
@@ -50,18 +53,21 @@ window.addEventListener('load', () => {
         router.navigateTo(path);
       });
 
-      router.addUriListener();
       return data
     }, 'html')
   }
 
   // Main Menu
   router.add('/', async () => {
-    load('/html/main_menu.html')
+    load('/html/main_menu.html').then(()=>{
+      new MainMenu(gameState, router)
+    })
   });
 
   router.add('/new-game', async () => {
-    load('/html/new_game.html')
+    load('/html/new_game.html').then(()=>{
+      new NewGame(gameState, router)
+    })
   });
 
   router.add('/save-game', async () => {
