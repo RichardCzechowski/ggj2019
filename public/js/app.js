@@ -1,20 +1,13 @@
 window.addEventListener('load', () => {
   const el = $('#app');
 
-  // Define new pages here
-  let menu = {
-    mainMenu: {
-      newGame: {},
-      saveGame: {},
-      loadGame: {},
-      store: {},
-      settings: {},
-      quit: {}
-    }
-  }
+  let advancedLink = "/001100100-01101111-01101111-01101101"
+
   let gameState = {
     saveDisabled: "disabled",
-    loadDisabled: "disabled"
+    loadDisabled: "disabled",
+    advancedLinkIsDisabled: "disabled",
+    advancedLink: "/001100100-01101111-01101111-01101101"
   }
 
   // Instantiate api handler
@@ -37,12 +30,13 @@ window.addEventListener('load', () => {
 
   const load = (file) =>{
     $.get(file, function (data) {
-        var html=Handlebars.compile(data);
-        el.html(html(gameState));
-        return data
+      var html=Handlebars.compile(data);
+      el.html(html(gameState));
+      return data
     }, 'html')
   }
 
+  // Main Menu
   router.add('/', async () => {
     load('/html/main_menu.html')
   });
@@ -63,10 +57,36 @@ window.addEventListener('load', () => {
     load('/html/store.html')
   });
 
+  // Settings
   router.add('/settings', async () => {
     load('/html/settings.html')
   });
 
+  // Settings Sub menus
+  router.add('/settings-audio', async () => {
+    load('/html/settings/audio.html')
+  });
+
+  router.add('/settings-controller', async () => {
+    load('/html/settings/controller.html')
+  });
+  router.add('/settings-graphics', async () => {
+    load('/html/settings/graphics.html')
+  });
+  router.add('/settings-language', async () => {
+    load('/html/settings/language.html')
+  });
+  router.add('/settings-statistics', async () => {
+    load('/html/settings/statistics.html')
+  });
+  router.add('/settings-advanced', async () => {
+    load('/html/settings/advanced-trick.html')
+  });
+  router.add('/settings-001100100-01101111-01101111-01101101', async () => {
+    load('/html/settings/advanced.html')
+  });
+
+  // Quit
   router.add('/quit', async () => {
     load('/html/quit_game.html')
   });
