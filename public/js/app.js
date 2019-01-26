@@ -2,6 +2,8 @@ import MainMenu from './main_menu.js'
 import NewGame from './new_game.js'
 import Controller from './settings/controller.js'
 import Audio from './settings/audio.js'
+import Graphics from './settings/graphics.js'
+import MotionBlur from './settings/motion_blur.js'
 
 window.addEventListener('load', () => {
   const el = $('#app');
@@ -9,6 +11,7 @@ window.addEventListener('load', () => {
   let advancedLink = "/001100100-01101111-01101111-01101101"
 
   let gameState = {
+    boxes: new Array(10).fill(0),
     saveDisabled: "disabled",
     loadDisabled: "disabled",
     advancedLinkIsDisabled: "disabled",
@@ -39,6 +42,9 @@ window.addEventListener('load', () => {
     },
   });
 
+  // Watch mouse
+  let blur = new MotionBlur(gameState, router)
+
   const showMessage = (message) => {
     const html = errorTemplate({ color: 'red', title, message });
     el.html(html);
@@ -52,7 +58,9 @@ window.addEventListener('load', () => {
       // Adds links based on ID
       $('menuitem').each((index, item)=>{
         $(item).on('click', (e)=>{
-          router.navigateTo($(item).attr('id'))
+          if ($(item).attr('id')){
+            router.navigateTo($(item).attr('id'))
+          }
         })
       })
 
@@ -120,7 +128,9 @@ window.addEventListener('load', () => {
     })
   });
   router.add('/settings-graphics', async () => {
-    load('/html/settings/graphics.html')
+    load('/html/settings/graphics.html').then(()=>{
+      new Graphics(gameState, router)
+    })
   });
   router.add('/settings-language', async () => {
     load('/html/settings/language.html')
