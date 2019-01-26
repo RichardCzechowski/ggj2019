@@ -7,33 +7,29 @@ Shadow Quality
 Add drop shadows
 Motion blur
 https://codepen.io/igcorreia/pen/pJvOpL
- -->
+-->
 <menu class="vertical-menu">
-  <menuitem class="option">
+  <div class="option">
     <label for="shadow">Shadow Quality</label>
-    <div>
-        <input id="shadow" type="range" name="shadow" min="0" max="100" value="0"/>
-    </div>
-  </menuitem>
-  <menuitem class="option">
-    <div>
-      <label for="theme">Theme</label>
-      <select name="theme" id="theme">
-        <option>Space</option>
-        <option>Outer Space</option>
-        <option>Dark</option>
-        <option>SHODAN</option>
-      </select>
-    </div>
-  </menuitem>
-  <menuitem>
-  <div class="can-toggle__label-text">Motion Blur</div>
+    <input id="shadow" type="range" name="shadow" min="0" max="100" value="0"/>
+  </div>
+  <div class="option">
+    <label for="theme">Theme</label>
+    <select name="theme" id="theme">
+      <option>Space</option>
+      <option>Outer Space</option>
+      <option>Dark</option>
+      <option>SHODAN</option>
+    </select>
+  </div>
+  <div>
+    <div class="can-toggle__label-text">Motion Blur</div>
     <div class="can-toggle demo-rebrand-1">
-      <input id="d" type="checkbox">
-      <label for="d">
-        <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
-      </label>
+        <input id="d" type="checkbox">
+        <label for="d">
+          <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+        </label>
     </div>
-  </menuitem>
+  </div>
   <menuitem id="/settings"><span>Back</span></menuitem>
 </menu>
