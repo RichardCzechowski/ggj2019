@@ -26,7 +26,6 @@ window.addEventListener('load', () => {
     if (gameState.points && gameState.points !== previousPoints) {
       $('#points-container').html(`${gameState.points} credits`)
     }
-
   }, 1000)
 
   // Instantiate api handler
