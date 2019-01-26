@@ -1,6 +1,7 @@
 import MainMenu from './main_menu.js'
 import NewGame from './new_game.js'
 import Controller from './settings/controller.js'
+import Audio from './settings/audio.js'
 
 window.addEventListener('load', () => {
   const el = $('#app');
@@ -47,6 +48,13 @@ window.addEventListener('load', () => {
     return $.get(file, function (data) {
       var html=Handlebars.compile(data);
       el.html(html(gameState));
+
+      // Adds links based on ID
+      $('menuitem').each((index, item)=>{
+        $(item).on('click', (e)=>{
+          router.navigateTo($(item).attr('id'))
+        })
+      })
 
       // block clicks from navigating
 
@@ -101,7 +109,9 @@ window.addEventListener('load', () => {
 
   // Settings Sub menus
   router.add('/settings-audio', async () => {
-    load('/html/settings/audio.html')
+    load('/html/settings/audio.html').then(()=>{
+      new Audio(gameState, router)
+    })
   });
 
   router.add('/settings-controller', async () => {

@@ -10,7 +10,7 @@ export default class MainMenu {
       this.quitJump()
     }
 
-    $("#quit").on("click", ()=>{
+    $(".quit").on("click", ()=>{
       console.log(this.gameState.difficulty)
       switch (this.gameState.difficulty) {
         case 1:
@@ -47,7 +47,7 @@ export default class MainMenu {
   }
 
   quitJump () {
-    $("#quit").on("mouseenter", (event)=>{
+    $(".quit").on("mouseenter", (event)=>{
 
       // Reset to origin
       event.target.style.left  = '0px'
