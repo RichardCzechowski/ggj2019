@@ -32,6 +32,25 @@ window.addEventListener('load', () => {
     $.get(file, function (data) {
       var html=Handlebars.compile(data);
       el.html(html(gameState));
+
+      // block clicks from navigating
+
+      $(html).find('a').on('click', (event) => {
+        // Block page load
+        event.preventDefault();
+
+        // Highlight Active Menu on Click
+        const target = $(event.target);
+        $('.item').removeClass('active');
+        target.addClass('active');
+
+        // Navigate to clicked url
+        const href = target.attr('href');
+        const path = href.substr(href.lastIndexOf('/'));
+        router.navigateTo(path);
+      });
+
+      router.addUriListener();
       return data
     }, 'html')
   }
@@ -91,6 +110,7 @@ window.addEventListener('load', () => {
     load('/html/quit_game.html')
   });
 
+  router.addUriListener();
   router.navigateTo(window.location.pathname);
 
   // Highlight Active Menu on Load
