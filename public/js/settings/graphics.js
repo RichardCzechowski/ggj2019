@@ -12,7 +12,7 @@ export default class Graphics {
       $('#dropshadow').html(`menu, menuitem{box-shadow: ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px teal;}`)
     })
 
-    $('#motion-blur').on('click', (event) =>{
+    $('#d').on('click', (event) =>{
       if(event.target.checked){
         this.gameState.blurLength = .3
         // Give them some points!
