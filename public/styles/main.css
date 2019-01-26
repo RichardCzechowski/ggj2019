@@ -22,7 +22,7 @@ body {
 .vertical-menu menuitem {
   color: white;
   display: block;
-  padding: 12px 0px 12px 24px;
+  padding: 1vw 0vw 1vw 2vw;
   text-decoration: none;
   flex: 1 1 100%;
   height: 100%;
