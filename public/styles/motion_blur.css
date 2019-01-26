@@ -1,7 +1,7 @@
 .box {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 10px;
+  height: 10px;
   top: 50%;
   left: 50%;
   margin: -50 0 0 -50px;
@@ -10,5 +10,6 @@
   -webkit-backface-visibility: hidden;
   opacity: 0;
   cursor: none;
+  pointer-events: none;
 }
 *{cursor:none;}

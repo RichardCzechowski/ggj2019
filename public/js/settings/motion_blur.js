@@ -14,7 +14,7 @@ export default class MotionBlur {
     let moveBox = (e) => {
       let that = this
       $box.each(function(index, val) {
-       TweenLite.to($(this), that.gameState.blurLength, { css: { left: e.pageX, top: e.pageY},delay:0+(index/750)});
+       TweenLite.to($(this), that.gameState.blurLength, { css: { left: e.pageX - 5, top: e.pageY - 5},delay:0+(index/750)});
       });
     }
 
