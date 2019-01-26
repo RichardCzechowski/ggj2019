@@ -1,3 +1,12 @@
+/*select buttons*/
+select {
+  background-color: #50c2bc;
+  opacity: .8;
+}
+
+
+
+/*Toggles/checkboxes*/
 body {
   padding: 30px;
 }
@@ -207,25 +216,25 @@ body {
   color: rgba(181, 62, 116, 0.5);
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:focus ~ label .can-toggle__switch, .can-toggle.demo-rebrand-1 input[type=checkbox]:hover ~ label .can-toggle__switch {
-  background-color: #b53e74;
+  /*background-color: #b53e74;*/
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:focus ~ label .can-toggle__switch:after, .can-toggle.demo-rebrand-1 input[type=checkbox]:hover ~ label .can-toggle__switch:after {
-  color: #8f315c;
+  color: #50c2bc;
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:hover ~ label {
-  color: #a23768;
+  color: #50c2bc;
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:checked ~ label:hover {
-  color: #39916a;
+  color: #a23768;
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:checked ~ label .can-toggle__switch {
-  background-color: #44ae7f;
+  background-color: #50c2bc;
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:checked ~ label .can-toggle__switch:after {
-  color: #368a65;
+  color: #50c2bc;
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:checked:focus ~ label .can-toggle__switch, .can-toggle.demo-rebrand-1 input[type=checkbox]:checked:hover ~ label .can-toggle__switch {
-  background-color: #3d9c72;
+  background-color: #50c2bc;
 }
 .can-toggle.demo-rebrand-1 input[type=checkbox]:checked:focus ~ label .can-toggle__switch:after, .can-toggle.demo-rebrand-1 input[type=checkbox]:checked:hover ~ label .can-toggle__switch:after {
   color: #2f7757;
@@ -235,7 +244,7 @@ body {
 }
 .can-toggle.demo-rebrand-1 label .can-toggle__switch {
   transition: background-color 0.3s ease-in-out;
-  background: #c14b81;
+  background: grey;
 }
 .can-toggle.demo-rebrand-1 label .can-toggle__switch:before {
   color: rgba(255, 255, 255, 0.6);
@@ -243,5 +252,5 @@ body {
 .can-toggle.demo-rebrand-1 label .can-toggle__switch:after {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  color: #b53e74;
+  color: grey;
 }
