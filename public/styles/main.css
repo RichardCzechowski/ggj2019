@@ -12,11 +12,14 @@ body {
 }
 
 .vertical-menu menuitem {
-  background-color: #eee; /* Grey background color */
-  color: black; /* Black text color */
+  background-color: #082023; /* Grey background color */
+  color: white; /* Black text color */
   display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
+  padding: 12px 24px; /* Add some padding */
+  margin-bottom: 24px;
   text-decoration: none; /* Remove underline from links */
+  border-radius: 3px;
+  border: 1px solid white;
 }
 
 .vertical-menu menuitem:hover:not(.disabled) {
@@ -39,10 +42,37 @@ body {
 .pageTitle {
   padding: 25px;
   width: 20%;
-  line-height: 4em;
+  line-height: 4.5em;
+  display: inline-block;
 }
 
 h1 {
   color: white;
-  font-size: 52px;
+  font-size: 55px;
+}
+
+.uiContainer {
+  width: 400px;
+  display: inline-block;
+  position: absolute;
+  background-color: #4fc2bc;
+  border: 5px solid #4fc2bc;
+  top: 10%;
+  left: 30%;
+}
+
+a {
+  color:white;
+  text-decoration: none;
+  font-size: 24px;
+}
+a:visited {
+  color:white;}
+  
+a:hover {
+  color:#082023;
+}
+
+a:active {
+  color:#4fc2bc;
 }
