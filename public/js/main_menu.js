@@ -6,7 +6,7 @@ export default class MainMenu {
   }
 
   setupListeners () {
-    if (this.gameState.difficulty === 3) {
+    if (this.gameState.points) {
       this.quitJump()
     }
 
@@ -14,6 +14,7 @@ export default class MainMenu {
       console.log(this.gameState.difficulty)
       switch (this.gameState.difficulty) {
         case 1:
+          this.quitAlert()
           break;
 
         case 2:
@@ -41,7 +42,13 @@ export default class MainMenu {
       "But you just got here.",
       "I'm lonely. Play with me.",
       "Click Cancel to quit your quitting",
-      "Click Ok to Stay"
+      "Click Ok to Stay",
+      "Whyyyyyyyyyyyy",
+      "Okay, you can leave",
+      "Are you a quitter?",
+      "Quitting is for quitters",
+      "2legit2quit",
+      "You'll miss out on all I have in STORE for you"
     ]
     this.recursiveConfirm(quitMsgs)
   }
@@ -55,8 +62,8 @@ export default class MainMenu {
       event.target.style.position = 'relative'
 
       // Randomize position
-      let randomHorz = 100 * Math.random() + 15
-      let randomVert = 100 * Math.random() + 15
+      let randomHorz = 100 * Math.random()
+      let randomVert = 100 * Math.random()
       randomHorz = Math.random() >= .5 ? randomHorz : randomHorz * -1
       randomVert = Math.random() >= .5 ? randomVert : randomVert * -1
       event.target.style.left  = `${parseInt(event.target.style.left) + randomHorz}px`
