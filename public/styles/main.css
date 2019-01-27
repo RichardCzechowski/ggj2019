@@ -59,7 +59,8 @@ body {
 }
 
 .buyContainer button:hover {
-  background-color: #094944;
+  background-color: #607D8B;
+  color: white;
 }
 
 .disabled, .disabled a {
@@ -139,6 +140,20 @@ button {
   padding: 15px 25px;
 }
 
+#points-container {
+  color: white;
+  width: 7vw;
+  height: 7vw;
+  background: #50c2bc;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  flex-wrap: inherit;
+  font-size: 1.5vw;
+  display: table-cell;
+}
 /* Vibration */
 .vibrate:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
