@@ -23,7 +23,7 @@ body {
  .vertical-menu {
   padding-inline-start: 0px;
  }
- 
+
 .vertical-menu menuitem {
   color: white;
   display: block;
@@ -40,6 +40,26 @@ body {
 .vertical-menu menuitem.active:not(.disabled) {
   background-color: #4CAF50; /* Add a green color to the "active/current" link */
   color: white;
+}
+
+.store {
+  display: flex;
+  height: auto;
+  min-width: 200px;
+  flex-wrap: wrap;
+}
+.buyContainer {
+  flex: 0 0 12vmax;
+  border: 3px solid #50c2bc;
+  padding: 25px;
+  width: 12vmax;
+  text-align: center;
+  border-radius: 20px 0px 0px 0px;
+  margin: 10px 10px;
+}
+
+.buyContainer button:hover {
+  background-color: #094944;
 }
 
 .disabled, .disabled a {
@@ -88,7 +108,7 @@ p {
   background-size: contain;
 }
 
-menuitem > .option {
+menu > .option, menuitem > span, menu > .option > select {
   color:white;
   text-decoration: none;
   font-size: 4vmin;
@@ -97,14 +117,6 @@ menuitem > .option {
 menuitem:hover {
   color:white;
   border-radius: 3px;
-}
-
-.buyContainer {
-  border: 3px solid #50c2bc;
-  padding: 25px;
-  width: 12vmax;
-  text-align: center;
-  border-radius: 20px 0px 0px 0px;
 }
 
 .horizDisplay {
