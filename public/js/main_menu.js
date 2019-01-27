@@ -11,7 +11,6 @@ export default class MainMenu {
     }
 
     $(".quit").on("click", ()=>{
-      console.log(this.gameState.difficulty)
       switch (this.gameState.difficulty) {
         case 1:
           this.quitAlert()

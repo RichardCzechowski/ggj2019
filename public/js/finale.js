@@ -35,10 +35,8 @@ export default class Finale {
       navigator.geolocation.getCurrentPosition(function(pos) {
         that.api.get('/api_key').then((key)=>{
           let apiKey = key.data
-          console.log(key)
           let latlng = `https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&latlng=${pos.coords.latitude},${pos.coords.longitude}`
           $.get(latlng).then((addr)=>{
-            console.log(addr)
             that.startFinale(addr)
           })
         })
