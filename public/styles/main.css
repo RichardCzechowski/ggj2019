@@ -204,3 +204,7 @@ button {
     transform: translate3d(4px, 0, 0);
   }
 }
+
+.controllerlayout {
+  width: 34vw;
+}
