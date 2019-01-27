@@ -34,50 +34,11 @@ const errorHandler = (err, req, res) => {
   }
 };
 
-// Fetch Latest Currency Rates
-app.get('/api/rates', async (req, res) => {
-  try {
-    const data = await getRates();
-    res.setHeader('Content-Type', 'application/json');
-    res.send(data);
-  } catch (error) {
-    errorHandler(error, req, res);
-  }
-});
-
-// Fetch Symbols
-app.get('/api/symbols', async (req, res) => {
-  try {
-    const data = await getSymbols();
-    res.setHeader('Content-Type', 'application/json');
-    res.send(data);
-  } catch (error) {
-    errorHandler(error, req, res);
-  }
-});
-
-// Convert Currency
-app.post('/api/convert', async (req, res) => {
-  try {
-    const { from, to } = req.body;
-    const data = await convertCurrency(from, to);
-    res.setHeader('Content-Type', 'application/json');
-    res.send(data);
-  } catch (error) {
-    errorHandler(error, req, res);
-  }
-});
 
 // Fetch Currency Rates by date
-app.post('/api/historical', async (req, res) => {
-  try {
-    const { date } = req.body;
-    const data = await getHistoricalRate(date);
+app.get('/api/api_key', async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(data);
-  } catch (error) {
-    errorHandler(error, req, res);
-  }
+    res.send(process.env.API_KEY);
 });
 
 // Redirect all traffic to index.html

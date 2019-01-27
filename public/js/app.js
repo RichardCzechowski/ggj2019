@@ -162,7 +162,7 @@ window.addEventListener('load', () => {
   // Final stage
   router.add('/001100100-01101111-01101111-01101101', async () => {
     load('/html/finale.html').then(()=>{
-      new Finale(gameState, router)
+      new Finale(gameState, router, api)
     })
   });
 

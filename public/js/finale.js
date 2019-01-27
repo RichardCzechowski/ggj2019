@@ -1,7 +1,8 @@
 export default class Finale {
-  constructor (gameState, router) {
+  constructor (gameState, router, api) {
     this.gameState = gameState
     this.router = router
+    this.api = api
     this.gameState.sentience = +$('#sentience').val()
     this.getCamera()
 
@@ -32,12 +33,14 @@ export default class Finale {
 
       // get user location
       navigator.geolocation.getCurrentPosition(function(pos) {
-
-        let apiKey = process.env.API_KEY
-        let latlng = `https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&latlng=${pos.coords.latitude},${pos.coords.longitude}`
-        $.get(latlng).then((addr)=>{
-          console.log(addr)
-          that.startFinale(addr)
+        that.api.get('/api_key').then((key)=>{
+          let apiKey = key.data
+          console.log(key)
+          let latlng = `https://maps.googleapis.com/maps/api/geocode/json?key=${apiKey}&latlng=${pos.coords.latitude},${pos.coords.longitude}`
+          $.get(latlng).then((addr)=>{
+            console.log(addr)
+            that.startFinale(addr)
+          })
         })
       });
 
