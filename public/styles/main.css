@@ -153,6 +153,27 @@ button {
   text-align: center;
   border-radius: 0px 0px 20px 20px;
   vertical-align: middle;
+}
+
+.subHeader {
+  font-size: 6vmin;
+  color: white;
+  padding-bottom: 15px;
+  font-family: roboto;
+  font-weight: 200;
+}
+
+.subLabel {
+  margin-bottom: 10px;
+  font-family: roboto;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}
+
+.menuIndent {
+  padding: 0px 30px 30px 60px
+}
 
 /* Vibration */
 .vibrate:hover {
