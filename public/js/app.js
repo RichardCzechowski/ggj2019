@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
   }
 
   // Gamestate update once a second
-  let previousPoints = 0
+  let previousPoints = undefined
   window.setInterval(()=>{
     // Watch points
     if (gameState.points !== previousPoints) {

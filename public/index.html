@@ -19,6 +19,7 @@
   <div class="uiContainer">
     <!-- Page content -->
     <div id="app"></div>
+    <div id="points-container"></div>
 
     <!-- Scripts -->
     <script src="scripts/jquery/dist/jquery.min.js"></script>
@@ -30,6 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
     <script type="module" src="js/app.js"></script>
     <audio id="audio" src="/audio/vibrateHm.wav" ></audio>
+
+    <!-- Collection for audio page  -->
+    <audio id="comet" class="audio-collection" src="/audio/comet.mp3" ></audio>
+    <audio id="coyote" class="audio-collection" src="/audio/coyote.mp3" ></audio>
+    <audio id="strange" class="audio-collection" src="/audio/strange.mp3" ></audio>
+    <audio id="record" class="audio-collection" src="/audio/record.mp3" ></audio>
+    <audio loop id="music" class="music" src="/audio/music.mp3" ></audio>
   </div>
   <!-- Motion Blur boxes -->
   <div class="box-container">
@@ -66,6 +74,5 @@
     <div class="box"></div>
     <div class="box"></div>
   </div>
-  <div id="points-container"></div>
 </body>
 </html>
