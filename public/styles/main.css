@@ -17,6 +17,7 @@ body {
  }
 
  #app {
+  padding-top: 105px;
   width: 100%;
  }
 
@@ -72,8 +73,8 @@ body {
 }
 
 .pageTitle {
-  padding: 25px;
-  width: 20%;
+  position: absolute;
+  top: -68px;
   line-height: 4.5em;
   display: inline-block;
 }
@@ -105,6 +106,7 @@ p {
   position: absolute;
   top: 10%;
   left: 300px;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
 }
