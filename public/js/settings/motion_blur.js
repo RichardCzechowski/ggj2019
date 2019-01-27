@@ -3,7 +3,6 @@ export default class MotionBlur {
     this.gameState = gameState
     this.router = router
     this.setupListeners()
-    this.gottenPoints = false
   }
 
   setupListeners () {

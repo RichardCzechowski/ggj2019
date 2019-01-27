@@ -104,7 +104,7 @@ p {
   display: inline-block;
   position: absolute;
   top: 10%;
-  left: 30%;
+  left: 300px;
   background-repeat: no-repeat;
   background-size: contain;
 }

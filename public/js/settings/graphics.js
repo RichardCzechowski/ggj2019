@@ -3,10 +3,6 @@ export default class Graphics {
     this.gameState = gameState
     this.router = router
     this.setupListeners()
-    this.gottenPoints = false
-    this.gottenPointsFromShadow = false
-    this.gottenPointsFromBackground = false
-    this.gottenPointsFromBlur = false
     $('#shadow').val(this.gameState.shadowLength)
   }
 
@@ -44,10 +40,10 @@ export default class Graphics {
         default:
           break;
       }
-      if(!this.gottenPointsFromBackground) {
+      if(!this.gameState.gottenPoints.background) {
         this.gameState.points += 5
       }
-      this.gottenPointsFromBackground = true
+      this.gameState.gottenPoints.background = true
       $('#background').html(backgroundCSS)
     })
 
@@ -55,10 +51,10 @@ export default class Graphics {
     // Drop shadow
     $('#shadow').on('input', (event)=>{
 
-      if(!this.gottenPointsFromShadow) {
+      if(!this.gameState.gottenPoints.shadow) {
         this.gameState.points += 5
       }
-      this.gottenPointsFromShadow = true
+      this.gameState.gottenPoints.shadow = true
 
       this.gameState.shadowLength = event.target.value
       $('#dropshadow').html(`menu, menuitem{box-shadow: ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px teal;}`)
@@ -68,10 +64,10 @@ export default class Graphics {
     $('#quality').change(() => {
       let val = $('input[name="quality"]:checked').val();
 
-      if(!this.gottenPointsFromBlur) {
+      if(!this.gameState.gottenPoints.blur) {
         this.gameState.points += 5
       }
-      this.gottenPointsFromBlur = true
+      this.gameState.gottenPoints.blur = true
 
       $('#blur').html(`* {filter: blur(${val}px)}`)
     })
@@ -81,10 +77,10 @@ export default class Graphics {
       if(event.target.checked){
         this.gameState.blurLength = .3
         // Give them some points!
-        if(!this.gottenPoints) {
+        if(!this.gameState.gottenPoints.motion) {
           this.gameState.points += 5
         }
-        this.gottenPoints = true
+        this.gameState.gottenPoints.motion = true
       } else {
         this.gameState.blurLength = 0
       }
