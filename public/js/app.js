@@ -4,6 +4,7 @@ import Controller from './settings/controller.js'
 import Audio from './settings/audio.js'
 import Graphics from './settings/graphics.js'
 import MotionBlur from './settings/motion_blur.js'
+import Store from './store.js'
 
 window.addEventListener('load', () => {
   const el = $('#app');
@@ -15,7 +16,7 @@ window.addEventListener('load', () => {
     saveDisabled: "disabled",
     loadDisabled: "disabled",
     advancedLinkIsDisabled: "disabled",
-    advancedLink: "/001100100-01101111-01101111-01101101",
+    advancedLink: "",
     points: 0,
     shadowLength: 0
   }
@@ -24,8 +25,9 @@ window.addEventListener('load', () => {
   let previousPoints = 0
   window.setInterval(()=>{
     // Watch points
-    if (gameState.points && gameState.points !== previousPoints) {
+    if (gameState.points !== previousPoints) {
       $('#points-container').html(`${gameState.points} credits`)
+      previousPoints = gameState.points
     }
   }, 1000)
 
@@ -107,7 +109,9 @@ window.addEventListener('load', () => {
   });
 
   router.add('/store', async () => {
-    load('/html/store.html')
+    load('/html/store.html').then(()=>{
+      new Store(gameState, router)
+    })
   });
 
   // Settings
