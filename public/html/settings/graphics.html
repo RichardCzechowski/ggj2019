@@ -9,7 +9,9 @@ Motion blur
 https://codepen.io/igcorreia/pen/pJvOpL
 -->
 <menu class="vertical-menu">
-  <div class="option">
+  <div class="subHeader">Graphics</div>
+  <div class="menuIndent">
+  <div class="subLabel">
     <label for="theme">Theme</label>
     <select name="theme" id="theme">
       <option>Space</option>
@@ -19,24 +21,24 @@ https://codepen.io/igcorreia/pen/pJvOpL
     </select>
   </div>
   <br>
-  <div class="option">
+  <div class="subLabel">
     <label for="shadow">Shadow Quality</label>
     <input id="shadow" type="range" name="shadow" min="0" max="100" value="0"/>
   </div>
   <br>
 
   <form id="quality">
-    <div class="option">
+    <div class="subLabel">
       <input type="radio" id="high" name="quality" value="0" checked>
       <label for="high">High</label>
     </div>
 
-    <div class="option">
+    <div class="subLabel">
       <input type="radio" id="medium" name="quality" value="1">
       <label for="medium">Medium</label>
     </div>
 
-    <div class="option">
+    <div class="subLabel">
       <input type="radio" id="low" name="quality" value="3">
       <label for="low">Low</label>
     </div>
@@ -45,7 +47,7 @@ https://codepen.io/igcorreia/pen/pJvOpL
   <br>
 
   <div>
-    <div class="can-toggle__label-text">Motion Blur</div>
+    <div class="can-toggle__label-text subLabel">Motion Blur</div>
     <div class="can-toggle demo-rebrand-1">
         <input id="d" type="checkbox">
         <label for="d">
@@ -53,5 +55,6 @@ https://codepen.io/igcorreia/pen/pJvOpL
         </label>
     </div>
   </div>
-  <menuitem id="/settings"><span>Back</span></menuitem>
+</div>
+  <menuitem id="/settings"><span> &lt; Back</span></menuitem>
 </menu>
