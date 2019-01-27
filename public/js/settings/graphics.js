@@ -77,7 +77,7 @@ export default class Graphics {
       }
       this.gameState.gottenPoints.blur = true
 
-      $('#blur').html(`* {filter: blur(${val}px)}`)
+      $('#blur').html(`#app {filter: blur(${val}px)}`)
     })
 
     // Motion blur
