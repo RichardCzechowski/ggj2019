@@ -17,7 +17,7 @@ body {
  }
 
  #app {
-  padding-top: 105px;
+  padding-top: 40px;
   width: 100%;
  }
 
@@ -105,10 +105,14 @@ p {
   display: inline-block;
   position: absolute;
   top: 10%;
-  left: 300px;
-  width: 100%;
+  width: 75%;
+  left: 100px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.shortDragBar {
+  max-width: 325px;
 }
 
 menu > .option, menuitem > span, menu > .option > select {

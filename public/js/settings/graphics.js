@@ -57,7 +57,7 @@ export default class Graphics {
       this.gameState.gottenPoints.shadow = true
 
       this.gameState.shadowLength = event.target.value
-      $('#dropshadow').html(`menu, menuitem{box-shadow: ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px teal;}`)
+      $('#dropshadow').html(`menu, menuitem, div{box-shadow: ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px teal;}`)
     })
 
     // Blur
