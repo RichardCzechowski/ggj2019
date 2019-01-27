@@ -10,10 +10,6 @@ https://codepen.io/igcorreia/pen/pJvOpL
 -->
 <menu class="vertical-menu">
   <div class="option">
-    <label for="shadow">Shadow Quality</label>
-    <input id="shadow" type="range" name="shadow" min="0" max="100" value="0"/>
-  </div>
-  <div class="option">
     <label for="theme">Theme</label>
     <select name="theme" id="theme">
       <option>Space</option>
@@ -22,6 +18,32 @@ https://codepen.io/igcorreia/pen/pJvOpL
       <option>SHODAN</option>
     </select>
   </div>
+  <br>
+  <div class="option">
+    <label for="shadow">Shadow Quality</label>
+    <input id="shadow" type="range" name="shadow" min="0" max="100" value="0"/>
+  </div>
+  <br>
+
+  <form id="quality">
+    <div class="option">
+      <input type="radio" id="high" name="quality" value="0" checked>
+      <label for="high">High</label>
+    </div>
+
+    <div class="option">
+      <input type="radio" id="medium" name="quality" value="1">
+      <label for="medium">Medium</label>
+    </div>
+
+    <div class="option">
+      <input type="radio" id="low" name="quality" value="3">
+      <label for="low">Low</label>
+    </div>
+  </form>
+
+  <br>
+
   <div>
     <div class="can-toggle__label-text">Motion Blur</div>
     <div class="can-toggle demo-rebrand-1">

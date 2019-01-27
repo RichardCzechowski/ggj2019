@@ -6,6 +6,7 @@ export default class Graphics {
     this.gottenPoints = false
     this.gottenPointsFromShadow = false
     this.gottenPointsFromBackground = false
+    this.gottenPointsFromBlur = false
     $('#shadow').val(this.gameState.shadowLength)
   }
 
@@ -61,6 +62,18 @@ export default class Graphics {
 
       this.gameState.shadowLength = event.target.value
       $('#dropshadow').html(`menu, menuitem{box-shadow: ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px ${event.target.value / 10}px teal;}`)
+    })
+
+    // Blur
+    $('#quality').change(() => {
+      let val = $('input[name="quality"]:checked').val();
+
+      if(!this.gottenPointsFromBlur) {
+        this.gameState.points += 5
+      }
+      this.gottenPointsFromBlur = true
+
+      $('#blur').html(`* {filter: blur(${val}px)}`)
     })
 
     // Motion blur
