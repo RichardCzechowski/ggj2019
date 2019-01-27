@@ -29,6 +29,9 @@ window.addEventListener('load', () => {
     if (gameState.points !== previousPoints) {
       $('#points-container').html(`${gameState.points} credits`)
       previousPoints = gameState.points
+      // Getting credits
+      var audio = document.getElementById("coins");
+      audio.play();
     }
   }, 1000)
 

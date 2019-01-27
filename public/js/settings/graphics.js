@@ -18,6 +18,14 @@ export default class Graphics {
           break;
 
         case "Outer Space":
+        backgroundCSS = `body {
+          background-image: url("/img/background/outer-Space.png");
+          background-repeat: no-repeat;
+          background-color: #000;
+          background-attachment: fixed;
+          background-position: center;
+        }`
+        break;
           break;
 
         case "Dark":
@@ -27,9 +35,9 @@ export default class Graphics {
           }`
           break;
 
-        case "SHODAN":
+        case "Kwaka":
           backgroundCSS = `body {
-            background-image: url("/img/background/shodan.gif");
+            background-image: url("/img/background/kwaka.png");
             background-repeat: no-repeat;
             background-color: #000;
             background-attachment: fixed;
