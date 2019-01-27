@@ -50,13 +50,14 @@ body {
   flex-wrap: wrap;
 }
 .buyContainer {
-  flex: 0 0 12vmax;
+  flex: 0 0 15vmax;
   border: 3px solid #50c2bc;
   padding: 25px;
   width: 12vmax;
   text-align: center;
   border-radius: 20px 0px 0px 0px;
-  margin: 10px 10px;
+  margin: 10px 15px;
+  line-height: 2.5vw;
 }
 
 .buyContainer button:hover {
@@ -113,6 +114,7 @@ p {
 
 .shortDragBar {
   max-width: 325px;
+  padding-bottom: 25px;
 }
 
 menu > .option, menuitem > span, menu > .option > select {
@@ -144,6 +146,11 @@ button {
   color: white;
   font-family: 'Orbitron', sans-serif;
   padding: 15px 25px;
+  font-weight: 600;
+}
+
+button .disabled {
+  background-color: #607D8B;
 }
 
 #points-container {
