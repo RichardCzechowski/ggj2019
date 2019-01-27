@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
     loadDisabled: "disabled",
     advancedLinkIsDisabled: "disabled",
     advancedLink: "",
-    points: 25,
+    points: 0,
     shadowLength: 0,
     gottenPoints: {}
   }
