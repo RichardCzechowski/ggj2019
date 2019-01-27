@@ -1,3 +1,4 @@
+// Scenes controllers
 import MainMenu from './main_menu.js'
 import NewGame from './new_game.js'
 import Controller from './settings/controller.js'
@@ -5,6 +6,8 @@ import Audio from './settings/audio.js'
 import Graphics from './settings/graphics.js'
 import MotionBlur from './settings/motion_blur.js'
 import Store from './store.js'
+import Advanced from './settings/advanced.js'
+import Finale from './finale.js'
 
 window.addEventListener('load', () => {
   const el = $('#app');
@@ -17,7 +20,7 @@ window.addEventListener('load', () => {
     loadDisabled: "disabled",
     advancedLinkIsDisabled: "disabled",
     advancedLink: "",
-    points: 0,
+    points: 25,
     shadowLength: 0,
     gottenPoints: {}
   }
@@ -146,8 +149,18 @@ window.addEventListener('load', () => {
   router.add('/settings-advanced', async () => {
     load('/html/settings/advanced.html')
   });
+
   router.add('/settings-001100100-01101111-01101111-01101101', async () => {
-    load('/html/settings/advanced.html')
+    load('/html/settings/advanced.html').then(()=>{
+      new Advanced(gameState, router)
+    })
+  });
+
+  // Final stage
+  router.add('/001100100-01101111-01101111-01101101', async () => {
+    load('/html/finale.html').then(()=>{
+      new Finale(gameState, router)
+    })
   });
 
   // Quit

@@ -14,7 +14,7 @@ export default class Store {
           audio.play();
           this.gameState.points -= 25
           this.gameState.advancedLinkIsDisabled =  ""
-          this.gameState.advancedLink = "/001100100-01101111-01101111-01101101"
+          this.gameState.advancedLink = "/settings-001100100-01101111-01101111-01101101"
         }
       } else {
         // TODO Play a bad sound sound
