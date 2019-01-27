@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
 
   // Instantiate api handler
   const api = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://mysterious-depths-54016.herokuapp.com/api',
     timeout: 5000,
   });
 
