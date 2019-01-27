@@ -18,7 +18,8 @@ window.addEventListener('load', () => {
     advancedLinkIsDisabled: "disabled",
     advancedLink: "",
     points: 0,
-    shadowLength: 0
+    shadowLength: 0,
+    gottenPoints: {}
   }
 
   // Gamestate update once a second

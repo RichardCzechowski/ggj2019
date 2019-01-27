@@ -104,7 +104,7 @@ p {
   display: inline-block;
   position: absolute;
   top: 10%;
-  left: 30%;
+  left: 300px;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -153,6 +153,9 @@ button {
   text-align: center;
   border-radius: 0px 0px 20px 20px;
   vertical-align: middle;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .subHeader {

@@ -6,7 +6,6 @@ export default class Controller {
     if($('#app').hasClass('vibrate')){
       $('#d').prop('checked',true)
     }
-    this.gottenPoints = false
   }
 
   setupListeners () {
@@ -16,10 +15,10 @@ export default class Controller {
       if(event.target.checked){
         $('#app').addClass('vibrate')
         // Give them some points!
-        if(!this.gottenPoints) {
+        if(!this.gameState.gottenPoints.controller) {
           this.gameState.points += 5
         }
-        this.gottenPoints = true
+          this.gameState.gottenPoints.controller = true
       } else {
         $('#app').removeClass('vibrate')
       }
